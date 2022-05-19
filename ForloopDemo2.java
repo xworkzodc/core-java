@@ -8,7 +8,7 @@ class ForloopDemo2{
 		 int sum=0;
 		for(int i=1; i<=n; i++){
 			sum=sum+i;  // this will print adition of 0 to 10;
-			System.out.println(sum );
+			System.out.println(sum );//git pull
 		}
 	}
 }
