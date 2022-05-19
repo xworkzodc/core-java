@@ -8,7 +8,7 @@ class ForloopMulti{
 	     int mul;
 		 //int sum=0;
 		for(int i=1; i<=10; i++){
-			mul=n*i;  // this will print adition of 0 to 10;
+			mul=n*i;  
 			System.out.println(mul );
 		}
 	}
