@@ -4,9 +4,11 @@ public class Company {
 	String name;
 	int worker;
  Company(){
-	worker=40;
 	name = "Xworkz";
+	worker=40;
+	
 	//System.out.println("Dfault constructor :"+name);// calling iside the method
 	//System.out.println("Dfault constructor :"+name);
 }
 }
+

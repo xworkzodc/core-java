@@ -10,9 +10,10 @@ public class Student {
 	 id=i;
 	 name=n; 
 	 collageName=cn;
+	 System.out.println(id+ " " + name + " " + collageName);
 	
 	  }
-    void show() {
+   /* void show() {
     	 System.out.println(id+ " " + name + " " + collageName);
-    	 }
+    	 } */
 }
