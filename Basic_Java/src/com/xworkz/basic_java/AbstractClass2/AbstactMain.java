@@ -9,6 +9,7 @@ Scooter scooter=new Scooter();
 
 car.start();
 scooter.start();
+System.out.println("hi");
 	}
 
 }
