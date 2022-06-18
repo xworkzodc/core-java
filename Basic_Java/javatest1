@@ -1,0 +1,234 @@
+Answer 5- We can not Overloded main method
+Answer 6- compiler can call to main method without the creation of objet.
+
+
+Answer -7- Static Variables  -Static Variables create in side the class and but out side the method , block , constructor.
+        *- Static variable one for the class .
+        *- we can call Static variable by object.
+        *- we can call Static variable by classes.
+        *- Static vaiable creat with Static Keyword.
+
+Answer 10- Instance Variable- Instance Variable create in side the class and but out side the method , block , constructor.
+        *- Instance variable one for the object .
+        *- we can call Instance variable by object.
+        *- Instance variable creat with  without Static Keyword.
+
+  Local Variable
+        *-Local variable create in side the method , block , constructor.
+        *-we can call  Local Variable by object.
+        *-Local value will destroy after execution.
+
+Answer 11- Then compiler can not call to main method .
+
+Anwser 12- JDK( java development kit ) Jdk is the software development envirnoment , and jdk is store the JRE + java development tools.
+
+Answer 13-JDK-
+        *-JDK( java development kit ) Jdk is the software development envirnoment , and jdk is store the JRE + java development tools.
+       
+        JRE- Jre is java runtime envirnoment ,
+        *-jre provide java runtime envirnoment it is also use to  develop java application , it  store the jvm and librery files.
+        
+        JVM- Jvm is a java virtual machine in which java byte code can be executed then provide runtime envirnoment,
+        *- Jvm is a execution engine.
+        *- jvm follow the rule - 1-loads code, 2- verify code ,3-Execute the code ,then provide runtime envirnoment.
+Anwer 14- We can not use both keyword together in a method, 
+
+Answer 15 - Hybrid inheritance is create Diamond  problem because it is combination of two  inheritance.
+
+Answer 16- Polymorphism - Polymorphism is a machanism in which single action can perform diffrent diffrent action .
+        *- Poly means many - morphism means forms it means so many forms.
+        * We can achive Polymorphism by two method , 1- Method overloading ,2-Method overriding.
+
+       *1- Method overloading- When two or more method has same name but parameter is diffrent this is called method overloading.
+
+        Class A{
+         void add(){
+           System.out.println("no parameter");
+           }
+          void add(int a , int b){
+           System.out.println(" it has parameter");
+        }
+   
+        }
+
+      2-Method overriding- When two or more method has same name and same parameter this is called method overloading.
+
+      Class A{
+         void add(int a, int b){
+           System.out.println("same parameter");
+           }
+          void add(int a , int b){
+           System.out.println(" same  parameter");
+        }
+   
+        }
+Answer 17-Abstraction -Hinding the impementation details and showing the functionality it is callad Abstraction.
+         *- we use impements keyword for achive the parent class code .
+
+      Ex- If we write the text send to some one other , massage will deliver but we do not know internal details , we know only functionality .
+        *- there are two ways to Achive Abstraction
+        1- Abstract class(0 - 100%)
+        2- Interface(100%)
+        
+        Example program-
+
+
+        abstract class Abstracttest{
+         abstract void add();// this is Abstract method
+                 }
+      
+    //  I am creating an other class
+
+       class  AbstractMain impements Abstracttest{
+               void add(){
+                     System.out.println(" creating abstract class body in an other class");
+                         }
+          }
+        
+Answer 19-Abstract class- Abstract class is achive Abstraction 0 to 100%.
+        * Its declare with abstract keyword
+        *-Abstract class can contain abstasrt method and constuctor.
+        *- we use impements keyword for achive the parent class code 
+
+        Interface-
+        *- Interface is  blueprint of a class.
+        *- Interface  can achive  Abstraction 100%.
+        *-Interface  can contain abstasrt method and constuctor.
+        *- we use impements keyword for achive the parent class code 
+        * we can not create object of interface.
+
+Answer-20- *1- Method overloading- When two or more method has same name but parameter is diffrent this is called method overloading.
+
+        Class A{
+         void add(){
+           System.out.println("no parameter");
+           }
+          void add(int a , int b){
+           System.out.println(" it has parameter");
+        }
+   
+        }
+Amswer 21--Method overriding- When two or more method has same name and same parameter this is called method overloading.
+
+      Class A{
+         void add(int a, int b){
+           System.out.println("same parameter");
+           }
+          void add(int a , int b){
+           System.out.println(" same  parameter");
+        }
+   
+        }
+
+ Answer 22- we can not override satatic method in java
+
+Answer 23- Step 1-Method overriding- When two or more method has same name and same parameter this is called method overloading.
+
+      Class A{
+       Step2-  void add(int a, int b){
+           System.out.println("same parameter");
+           }
+          // we can perform Step-3- in an other class
+        Step3-  void add(int a , int b){
+           System.out.println(" same  parameter");
+        }
+   
+        }
+
+Answer 25- *1- Method overloading- When two or more method has same name but parameter is diffrent this is called method overloading.
+
+        Class A{
+         void add(){
+           System.out.println("no parameter");
+           }
+          void add(int a , int b){
+           System.out.println(" it has parameter");
+        }
+   
+        }
+
+Answer 27- Constructor- Constructor is a process to initialize object of class 
+        *there are two type of constructor 1-Default constructor, 2- Paramererized constructor
+        * Yes we can overload the constructor.
+
+Answer 28-There are two type of constructor
+       *- 1-Default constructor, 2- Paramererized constructor
+
+       1-Default constructor--Default constructor create same as class name but it has no parameter,
+
+       2- Paramererized constructor-- Paramererized constructor create same as class namepes  but it has parameter.
+
+Answer 29-Inheritance- Inheritance is a machanism in which one object acquire all the property  behaviour of parent class.
+       *-there are 5 types of inheritance 
+
+       1-Single inheritance- Single inheritance is the combination of two class parent class and child class .in which child class inherit the all the property and behaviour of parent class
+        *- It is IS-A-Relationship.
+      Ex-
+       class Father {
+       String color;
+       String bloodgroup;
+       String Skin;
+      
+      }
+      class son extends Father{
+       void show(){
+       System.out.println(" ");
+       }
+      }
+    public static void main (String [] args){
+    Son son = new Son();
+        son.show(use );
+}
+    2- Multiple- inheritance -     Multiple inheritance is the comination of 3 or more classes in which one parent class and two child class .
+     *- It is IS-A-Relationship.   
+    Ex-
+      class Animal {
+         String color;
+         String bloodgroup;
+         String Skin;
+      
+      }
+
+      class Cow extends Animal{
+       void show(){
+       System.out.println(" ");
+       }
+      class Dog extends Cow{
+       void show(){
+       System.out.println(" ");
+       }
+
+
+        public static void main (String [] args){
+        Dog  dog  = new Dog ();
+        Dog .show();}}
+
+  3- Multilavel inheritance -java does not support multilavel inheritance because here is combination of two or more parent classes compiler get confused .
+     * By interface java supported multilavel inharitance .
+
+ 4-  Hierarchical-inheritance 
+      Hierarchical-inheritance is the combination of 3 or more classes one parent class and differt diffrent child classess.
+     *- Every child class can access parent class directly.
+     *  It is IS-A-Relationship. 
+
+ ex - class Animal{
+         String color;
+         String bloodgroup;
+         String Skin;
+       }
+       class Cow extends Animal{ // Directly access to parent class
+       void show(){
+       System.out.println(" ");
+       }
+      class Dog extends Animal{//Directly access to parent class
+       void show(){
+       System.out.println(" ");
+       public static void main (String [] args){
+        Dog  dog  = new Dog ();
+        Cow cow =new Cow();
+        Cow .show();
+        Dog .show();}}
+     
+  
+ 5-Hybrid inheritance is create Diamond  problem because it is combination of two  inheritance.     
+      
