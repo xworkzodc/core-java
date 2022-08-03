@@ -17,7 +17,7 @@ public class Details implements Atm{
          	System.out.println("Please Enter Your Pin");
          	int pin=in.nextInt();                                     // importent
          	if (pin>=9999) {
-             System.out.println("Please Enter Your Ampunt : Your Amount Should Be Under 10000");
+             System.out.println("Please Enter Your Amount : Your Amount Should Be Under 10000");
              int amount=in.nextInt();
          		if (amount>=10000) {
          			System.out.println("Collect your Cash");
