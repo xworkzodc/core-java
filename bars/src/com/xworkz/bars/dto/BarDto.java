@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 import com.xworkz.bars.constant.Bartype;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+//import lombok.AllArgsConstructor;
+//import lombok.Getter;
+//import lombok.NoArgsConstructor;
+//import lombok.Setter;
+//import lombok.ToString;
 
 
 public class BarDto implements Serializable{
@@ -18,6 +18,16 @@ private String location;
 private Bartype type=Bartype.DEFAULT;
 private Double avgCollectionPerDay;
 private Double collectionPerMonth;
+
+public BarDto(int id, String string, String string2, Bartype resort, double d, double e) {
+	this.id =id;
+	this.name=name;
+	this.location=location;
+	this.type=type;
+	this.avgCollectionPerDay=avgCollectionPerDay;
+	this.collectionPerMonth=collectionPerMonth;
+	// TODO Auto-generated constructor stub
+}
 public Integer getId() {
 	return id;
 }

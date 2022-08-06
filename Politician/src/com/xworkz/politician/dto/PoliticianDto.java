@@ -24,12 +24,16 @@ public class PoliticianDto implements Serializable {
        private String partylocation;
        private String partysysmbol;
        
+       public PoliticianDto() {
+		// TODO Auto-generated constructor stub
+	}
+       
        
        
 	
 	public PoliticianDto(Integer id, String name, String partyname, String president, Integer totalmembers,
 			double budget, String headquaters, String partylocation, String partysysmbol) {
-		super();
+		//super();
 		this.id = id;
 		this.name = name;
 		this.partyname = partyname;
@@ -100,6 +104,5 @@ public class PoliticianDto implements Serializable {
 				+ ", totalmembers=" + totalmembers + ", budget=" + budget + ", headquaters=" + headquaters
 				+ ", partylocation=" + partylocation + ", partysysmbol=" + partysysmbol + "]";
 	}
-	
-	
+
 }

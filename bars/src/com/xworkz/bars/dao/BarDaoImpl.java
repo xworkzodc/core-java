@@ -14,8 +14,9 @@ public class BarDaoImpl implements BarDao {
 	public boolean save(BarDto barDto) {
 	try {
 		Connection connection=DriverManager.getConnection(URL.getValue(), USERNAME.getValue(), SECRET.getValue())	;
-		String insert = "insert into bar.bartable values (" +barDto.getId()+", '"+barDto.getName()+"',  ' "+barDto.getLocation()+ " ',"
-				+ "' "+barDto.getAvgCollectionPerDay()+" ,' "+barDto.getCollectionPerMonth()+" ')";
+	    String insert = "insert into bar.bartable values (" +barDto.getId()+", '"+barDto.getName()+"',  ' "+barDto.getLocation()+ " ',' "+barDto.getType().getName()+ " ', "+barDto.getAvgCollectionPerDay()+" , "+barDto.getCollectionPerMonth()+" )";
+		//String insert = "insert into bar.bartable values ();
+		System.out.println(insert);
 		Statement statement = connection.createStatement();
 		Integer rOfA = statement.executeUpdate(insert);
 		System.out.println(rOfA);
