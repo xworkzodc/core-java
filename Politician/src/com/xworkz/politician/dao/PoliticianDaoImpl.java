@@ -19,7 +19,7 @@ public class PoliticianDaoImpl implements PoliticianDao {
 	private static final String SECERET = null;
 
 	@Override
-	public boolean save(PoliticianDto politicianDto) {
+	public boolean save(PoliticianDto politicianDto) {//1
 		try (Connection connection = DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(),
 				SECRATE.getvalue());) {
 
@@ -54,7 +54,7 @@ public class PoliticianDaoImpl implements PoliticianDao {
 	}
 
 	@Override
-	public PoliticianDto findById(int id) {
+	public PoliticianDto findById(int id) {//2
 
 		try (Connection connection = DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(),
 				SECRATE.getvalue())) {
@@ -84,7 +84,7 @@ public class PoliticianDaoImpl implements PoliticianDao {
 				politicianDto.setName(name);
 				
 				politicianDto.setPartyname(partyname);
-				//politicianDto.setPartyname(Partyname.getPartyName(partyname).getparty())
+				//politicianDto.setPartyname(PartySysmbol.getPartyName(partysysbmol))
 				politicianDto.setPresident(president);
 				politicianDto.setTotalmembers(totalmember);
 				politicianDto.setBudget(partybudget);
@@ -103,7 +103,7 @@ public class PoliticianDaoImpl implements PoliticianDao {
 	}
 
 	@Override
-	public PoliticianDto findByIdAndPresident(int id, String president) {
+	public PoliticianDto findByIdAndPresident(int id, String president) {//3
 		try (Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue())){
 			//Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue());
 			
@@ -154,7 +154,7 @@ public class PoliticianDaoImpl implements PoliticianDao {
 	}
 
 	@Override
-	public PoliticianDto findByIdAndPresidentAndName(int id, String name, String president) {
+	public PoliticianDto findByIdAndPresidentAndName(int id, String name, String president) {//4
 		try(Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue())) {
 			//Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue());
 			
@@ -162,8 +162,8 @@ public class PoliticianDaoImpl implements PoliticianDao {
 			PreparedStatement preparedStatement=connection.prepareStatement(select);
 			//PreparedStatement preparedStatement=connection.prepareStatement(select);
 			preparedStatement.setInt(1, id);
-			preparedStatement.setString(2, president);
-			preparedStatement.setString(3, name);
+			preparedStatement.setString(3, president);
+			preparedStatement.setString(2, name);
 			
 			
 			ResultSet resultSet=preparedStatement.executeQuery();
@@ -178,16 +178,16 @@ public class PoliticianDaoImpl implements PoliticianDao {
 				String partylocation=resultSet.getString(8);
 				String partysysmbol=resultSet.getString(9);
 				
-				PoliticianDto politicianDto=new PoliticianDto();
-				politicianDto.setId(id3);
-				politicianDto.setName(name2);
-				politicianDto.setPartyname(partyname);
-				politicianDto.setPresident(president3);
-				politicianDto.setTotalmembers(totalmember);
-				politicianDto.setBudget(partybudget);
-				politicianDto.setHeadquaters(headquaters);
-				politicianDto.setPartylocation(partylocation);
-				politicianDto.setPartysysmbol(partysysmbol);
+				PoliticianDto politicianDto1=new PoliticianDto();
+				politicianDto1.setId(id3);
+				politicianDto1.setName(name2);
+				politicianDto1.setPartyname(partyname);
+				politicianDto1.setPresident(president3);
+				politicianDto1.setTotalmembers(totalmember);
+				politicianDto1.setBudget(partybudget);
+				politicianDto1.setHeadquaters(headquaters);
+				politicianDto1.setPartylocation(partylocation);
+				politicianDto1.setPartysysmbol(partysysmbol);
 				
 				
 //				List<PoliticianDto> politicianDto1=new ArrayList<PoliticianDto>();
@@ -196,7 +196,7 @@ public class PoliticianDaoImpl implements PoliticianDao {
 //					System.out.println("from array list : " +politicianDto2);
 //				}
 				
-				return politicianDto;
+				return politicianDto1;
 			}
 			
 			
@@ -210,41 +210,41 @@ public class PoliticianDaoImpl implements PoliticianDao {
 	}
 
 	@Override
-	public String findNameById(int id, String name) {
+	public String findNameById(int id) {//6
 		try(Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue())) {
 			//Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue());
 			
-			String select = "SELECT * from politician.politician_info where id=? AND name=? ";
+			String select = "SELECT * from politician.politician_info where id=?";
 			PreparedStatement preparedStatement=connection.prepareStatement(select);
 			//PreparedStatement preparedStatement=connection.prepareStatement(select);
 			preparedStatement.setInt(1, id);
 			
-			preparedStatement.setString(2, name);
+		//	preparedStatement.setString(2, name);
 			
 			
 			ResultSet resultSet=preparedStatement.executeQuery();
 			while(resultSet.next()) {
-				Integer id4= resultSet.getInt(1);
+				//Integer id4= resultSet.getInt(1);
 				String name3= resultSet.getString(2);
-				String partyname= resultSet.getString(3);
-				String president= resultSet.getString(4);
-				Integer totalmember= resultSet.getInt(5);
-				Double partybudget= resultSet.getDouble(6);
-				String headquaters= resultSet.getString(7);
-				String partylocation=resultSet.getString(8);
-				String partysysmbol=resultSet.getString(9);
-				
-				PoliticianDto politicianDto=new PoliticianDto();
-				politicianDto.setId(id4);
-				politicianDto.setName(name3);
-				politicianDto.setPartyname(partyname);
-				politicianDto.setPresident(president);
-				politicianDto.setTotalmembers(totalmember);
-				politicianDto.setBudget(partybudget);
-				politicianDto.setHeadquaters(headquaters);
-				politicianDto.setPartylocation(partylocation);
-				politicianDto.setPartysysmbol(partysysmbol);
-				return null;
+//				String partyname= resultSet.getString(3);
+//				String president= resultSet.getString(4);
+//				Integer totalmember= resultSet.getInt(5);
+//				Double partybudget= resultSet.getDouble(6);
+//				String headquaters= resultSet.getString(7);
+//				String partylocation=resultSet.getString(8);
+//				String partysysmbol=resultSet.getString(9);
+//				
+//				PoliticianDto politicianDto=new PoliticianDto();
+//				politicianDto.setId(id4);
+//				politicianDto.setName(name3);
+//				politicianDto.setPartyname(partyname);
+//				politicianDto.setPresident(president);
+//				politicianDto.setTotalmembers(totalmember);
+//				politicianDto.setBudget(partybudget);
+//				politicianDto.setHeadquaters(headquaters);
+//				politicianDto.setPartylocation(partylocation);
+//				politicianDto.setPartysysmbol(partysysmbol);
+				return name3;
 			}
 		
 	}
@@ -254,11 +254,162 @@ public class PoliticianDaoImpl implements PoliticianDao {
 		}
 		return null;
 
-}
+	}
 
 	@Override
-	public PoliticianDto findByIdName(String name, int id) {
-		// TODO Auto-generated method stub
+	public PoliticianDto findByIdName( int id,String name) {
+		try(Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue())) {
+			String select = "SELECT * from politician.politician_info where id=? And name=?";
+			PreparedStatement preparedStatement=connection.prepareStatement(select);
+			
+			preparedStatement.setInt(1, id);
+			preparedStatement.setString(2, name);
+			
+			
+			ResultSet resultSet=preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				Integer id5= resultSet.getInt(1);
+				String name4= resultSet.getString(2);
+				String partyname= resultSet.getString(3);
+				String president= resultSet.getString(4);
+				Integer totalmember= resultSet.getInt(5);
+				Double partybudget= resultSet.getDouble(6);
+				String headquaters= resultSet.getString(7);
+				String partylocation=resultSet.getString(8);
+				String partysysmbol=resultSet.getString(9);
+				
+				PoliticianDto politicianDto2=new PoliticianDto();
+				politicianDto2.setId(id5);
+				politicianDto2.setName(name4);
+				politicianDto2.setPartyname(partyname);
+				politicianDto2.setPresident(president);
+				politicianDto2.setTotalmembers(totalmember);
+				politicianDto2.setBudget(partybudget);
+				politicianDto2.setHeadquaters(headquaters);
+				politicianDto2.setPartylocation(partylocation);
+				politicianDto2.setPartysysmbol(partysysmbol);
+			
+				return politicianDto2;
+			}
+		
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
 		return null;
 	}
+
+	@Override
+	public String findPresidentByIdAndName(int id, String name) {//7
+		try(Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue())) {
+			
+			
+			String select = "SELECT * from politician.politician_info where id=? AND name=? ";
+			PreparedStatement preparedStatement=connection.prepareStatement(select);
+			
+			preparedStatement.setInt(1, id);
+			
+			preparedStatement.setString(2, name);
+			
+			
+			ResultSet resultSet=preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				Integer id3= resultSet.getInt(1);
+				String name2= resultSet.getString(2);
+//				String partyname= resultSet.getString(3);
+				String president3= resultSet.getString(4);
+//				Integer totalmember= resultSet.getInt(5);
+//				Double partybudget= resultSet.getDouble(6);
+//				String headquaters= resultSet.getString(7);
+//				String partylocation=resultSet.getString(8);
+//				String partysysmbol=resultSet.getString(9);
+				
+				PoliticianDto politicianDto3=new PoliticianDto();
+//				politicianDto1.setId(id3);
+//				politicianDto1.setName(name2);
+//				politicianDto1.setPartyname(partyname);
+				politicianDto3.setPresident(president3);
+//				politicianDto1.setTotalmembers(totalmember);
+//				politicianDto1.setBudget(partybudget);
+//				politicianDto1.setHeadquaters(headquaters);
+//				politicianDto1.setPartylocation(partylocation);
+//				politicianDto1.setPartysysmbol(partysysmbol);
+//				
+				return president3;
+		
+			}
+			
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		return null;
+	}
+
+	@Override
+	public int getTotal() {
+		try(Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue())) {
+			String select ="SELECT COUNT(*) as count_politician from politician_info";
+			PreparedStatement preparedStatement=connection.prepareStatement(select);
+			ResultSet resultSet=preparedStatement.executeQuery();
+			
+		    resultSet.next();
+		    int count=resultSet.getInt(1);
+		    PoliticianDto politicianDto8=new PoliticianDto();
+		    return count;
+				
+					
+				
+			
+			
+			
+			
+		} catch (SQLException e) {
+			
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	@Override
+	public PoliticianDto findPartyByMaxMembers() {
+		try(Connection connection=DriverManager.getConnection(URL.getvalue(), USERNAME.getvalue(), SECRATE.getvalue())) {
+			String select ="SELECT MAX(totalmembers=?) FROM politician_info";
+			
+					//"SELECT * from politician.politician_info where id=? And name=?";
+			PreparedStatement preparedStatement=connection.prepareStatement(select);
+			
+			int totalmembers = 0;
+			preparedStatement.setInt(1, totalmembers);
+			
+			
+			ResultSet resultSet=preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				
+				String partyname= resultSet.getString(1);
+				
+				PoliticianDto politicianDto2=new PoliticianDto();
+				
+				politicianDto2.setPartyname(partyname);
+			
+			
+				return politicianDto2;
+			}
+		
+			
+		} catch (SQLException e) {
+			
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	
+	
 }
+	

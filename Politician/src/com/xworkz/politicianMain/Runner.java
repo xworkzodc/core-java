@@ -57,8 +57,8 @@ public class Runner {
 //
 //		System.out.println(dtos);
 		 //3rd-----
-		PoliticianDto dtos2=politicianDao.findByIdAndPresident(5,"Nandan");
-		System.out.println("value : " +dtos2);
+	//	PoliticianDto dtos2=politicianDao.findByIdAndPresident(5,"Nandan");
+		//System.out.println("value : " +dtos2);
 		
 		//4rth
 		PoliticianDto dtos3=politicianDao.findByIdAndPresidentAndName(2, "Hanumant", "Darshan");
@@ -66,21 +66,24 @@ public class Runner {
 		
 		//5th
 		
-		String dtos4=politicianDao.findNameById(2, "Darshan");
+		
+		String dtos4=politicianDao.findNameById(2);
 		System.out.println("method 5rth : " +dtos4);
 		
 		
+		PoliticianDto dtos5=politicianDao.findByIdName(2 ,"Darshan");
+		System.out.println("method Six : " +dtos5);
 		
 		
+		String dtos6=politicianDao.findPresidentByIdAndName(1, "kalyan");
+		System.out.println("method Seven : " +dtos6);
 		
+		int dtos8=politicianDao.getTotal();
+		System.out.println("method 8 : " +dtos8);
 		
-		
-		
-		
-		
-		
-		
-
+		PoliticianDto dtos9=politicianDao.findPartyByMaxMembers();
+		System.out.println("method 9 : " +dtos9);
 	}
-
+	
 }
+
