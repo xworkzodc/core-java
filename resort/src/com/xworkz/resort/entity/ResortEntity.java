@@ -6,24 +6,27 @@ import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
 @AllArgsConstructor
 @Entity
 @Table(name="resort_info")
-
+@NoArgsConstructor
 public class ResortEntity implements Serializable {
 	
+	@Id
 	@Column(name="id")
 	private Integer id;
 	@Column(name="name")
 	private String name;
-	@Column(name="location")
+	@Column(name="locaton")
 	private String location ;
 	@Column(name="checkInTime")
 	private LocalTime checkInTime;
