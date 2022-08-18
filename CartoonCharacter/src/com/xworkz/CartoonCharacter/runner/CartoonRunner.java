@@ -48,18 +48,27 @@ cartoons.add(cartoon7);
 cartoons.add(cartoon8);
 cartoons.add(cartoon9);
 cartoons.add(cartoon10);
-//boolean save=cartoonDao.saveAll(cartoons);
+//boolean save=cartoonDao.saveAll(cartoons);(
 //System.out.println(save);
 //Cartoon res=cartoonDao.findByName("nanadan");
 //	System.out.println(res);
 
-//Integer res=cartoonDao.total();
+//Long res=cartoonDao.total();
 //System.out.println(res);
 
 //Cartoon res=cartoonDao.findByNameAndCountryAndGenderAndAuthor(" tom", "nepal", "male", "malthish");//5 Cartoon is return type.
 //System.out.println(res);
 
-String res=cartoonDao.findAuthorByName("jerry");
- System.out.println(res);
+//String res=cartoonDao.findAuthorByName("jerry");
+ //System.out.println(res)
+                            //18
+//cartoonDao.findAll().forEach(System.out::println);
+//cartoonDao.findAllByAuthor("ravi").forEach(System.out::println);
+//cartoonDao.findAllByAuthorAndGender("ravi","male").forEach(System.out::println);
+//cartoonDao.findAllName().forEach(System.out::println);
+//cartoonDao.findAllCountryName().forEach(System.out::println);
+
+//cartoonDao.findAllNameAndCountry().forEach(Arjun->System.out.println(Arjun[0]+"::"+Arjun [1]));
+cartoonDao.findAllNameAndCountryAndAuthor().forEach(Arjun->System.out.println(Arjun[0]+"::"+Arjun[1]+"::"+Arjun[2]));
 }
 }

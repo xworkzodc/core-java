@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Data
 @Getter
@@ -17,7 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
-
+@ToString
 
 
 public class CartoonParent {
