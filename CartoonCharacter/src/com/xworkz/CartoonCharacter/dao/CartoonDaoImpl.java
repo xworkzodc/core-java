@@ -16,8 +16,7 @@ import java.util.List;
 
 //improt static com.xworkz.CartoonCharecter.factory.CartoonFactory.*;
 public class CartoonDaoImpl implements CartoonDao {
-	private static final LocalDateTime LocalDateTime = null;
-	EntityManagerFactory factory = getfactory();
+      private	EntityManagerFactory factory = getfactory();
 
 	@Override
 	public boolean saveAll(List<Cartoon> enteis) {
@@ -150,8 +149,8 @@ public class CartoonDaoImpl implements CartoonDao {
 			query.setParameter("an", author);
 			Object object = query.getSingleResult();
 			if (object != null) {
-				// String string = (String) object;// down
-				return LocalDateTime;
+				 LocalDateTime date = (LocalDateTime) object;// down
+				return date;
 			}
 
 		} catch (PersistenceException e) {
