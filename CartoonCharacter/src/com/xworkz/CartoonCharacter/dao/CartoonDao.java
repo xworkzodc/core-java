@@ -12,21 +12,21 @@ public interface CartoonDao {
 
 	Long total();// 3
 
-	Cartoon findByMaxCreatedDate();
+	Cartoon findByMaxCreatedDate();//4
 
 	Cartoon findByNameAndCountryAndGenderAndAuthor(String name, String country, String gender, String author);// 5
 
-	String findAuthorByName(String name);
+	String findAuthorByName(String name);//6
 
-	Object[] findNameAndCountryByAuthor(String author);
+	Object[] findNameAndCountryByAuthor(String author);//7
 
-	LocalDateTime findCreatedDateByAuthor(String author);
+	LocalDateTime findCreatedDateByAuthor(String author);//8
 
-	void updateAuthorByName(String newAuthir, String name);
+	void updateAuthorByName(String author, String name);//9
 
-	void updateTypeByName(String name);
+	void updateTypeByName(String name);//10
 
-	void deleteByName(String name);
+	void deleteByName(String name);//11
 
 //18-08-22
 	List<Cartoon> findAll();

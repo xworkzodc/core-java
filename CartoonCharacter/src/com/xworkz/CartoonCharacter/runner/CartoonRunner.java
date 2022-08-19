@@ -1,6 +1,7 @@
 package com.xworkz.CartoonCharacter.runner;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,7 @@ cartoons.add(cartoon7);
 cartoons.add(cartoon8);
 cartoons.add(cartoon9);
 cartoons.add(cartoon10);
-//boolean save=cartoonDao.saveAll(cartoons);(
+//boolean save=cartoonDao.saveAll(cartoons);
 //System.out.println(save);
 //Cartoon res=cartoonDao.findByName("nanadan");
 //	System.out.println(res);
@@ -69,6 +70,13 @@ cartoons.add(cartoon10);
 //cartoonDao.findAllCountryName().forEach(System.out::println);
 
 //cartoonDao.findAllNameAndCountry().forEach(Arjun->System.out.println(Arjun[0]+"::"+Arjun [1]));
-cartoonDao.findAllNameAndCountryAndAuthor().forEach(Arjun->System.out.println(Arjun[0]+"::"+Arjun[1]+"::"+Arjun[2]));
+//cartoonDao.findAllNameAndCountryAndAuthor().forEach(Arjun->System.out.println(Arjun[0]+"::"+Arjun[1]+"::"+Arjun[2]));
+
+                        //17
+//LocalDateTime res =cartoonDao.findCreatedDateByAuthor("ravi");
+//System.out.println(res);
+//cartoonDao.updateAuthorByName("jerry"," tom");
+//cartoonDao.updateTypeByName("nandan");
+cartoonDao.deleteByName("nandan");
 }
 }

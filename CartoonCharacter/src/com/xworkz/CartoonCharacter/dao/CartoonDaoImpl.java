@@ -16,6 +16,7 @@ import java.util.List;
 
 //improt static com.xworkz.CartoonCharecter.factory.CartoonFactory.*;
 public class CartoonDaoImpl implements CartoonDao {
+	private static final LocalDateTime LocalDateTime = null;
 	EntityManagerFactory factory = getfactory();
 
 	@Override
@@ -141,34 +142,93 @@ public class CartoonDaoImpl implements CartoonDao {
 	}
 
 	@Override
-	public LocalDateTime findCreatedDateByAuthor(String author) {
-		// TODO Auto-generated method stub
+	public LocalDateTime findCreatedDateByAuthor(String author) { // 8
+		EntityManager manager = factory.createEntityManager();
+		try {
+			Query query = manager.createNamedQuery("findCreatedDateByAuthor");
+			// manager.setProperty(author, query);
+			query.setParameter("an", author);
+			Object object = query.getSingleResult();
+			if (object != null) {
+				// String string = (String) object;// down
+				return LocalDateTime;
+			}
+
+		} catch (PersistenceException e) {
+			e.printStackTrace();
+		} finally {
+			manager.close();
+		}
 		return null;
 	}
 
 	@Override
-	public void updateAuthorByName(String newAuthir, String name) {
-		// TODO Auto-generated method stub
+	public void updateAuthorByName(String author, String name) {
+		EntityManager manager = factory.createEntityManager();
+		try {
+			EntityTransaction tx = manager.getTransaction();
+			tx.begin();
+			Query query = manager.createNamedQuery("updateAuthorByName");
+			query.setParameter("nm", author);
+			query.setParameter("am", name);
+			query.executeUpdate();
+			tx.commit();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			manager.close();
+		}
 	}
 
 	@Override
 	public void updateTypeByName(String name) {
-		// TODO Auto-generated method stub
+	EntityManager manager=	factory.createEntityManager();
+	try {
+		EntityTransaction tx=manager.getTransaction();
+		tx.begin();
+		Query query=manager.createNamedQuery("updateTypeByName");
+		//query.setParameter("nm", type);
+		query.setParameter("nm", name);
+		query.executeUpdate();
+		tx.commit();
+		
+	} catch (PersistenceException e) {
+		e.printStackTrace();
+	}finally {
+		manager.close();
+	}
 
 	}
 
 	@Override
-	public void deleteByName(String name) {
-		// TODO Auto-generated method stub
+	public void deleteByName(String name) {                       //11
+		EntityManager manager=	factory.createEntityManager();
+		try {
+			EntityTransaction tx=manager.getTransaction();
+			tx.begin();
+			Query query=manager.createNamedQuery("deleteByName");
+			//query.setParameter("nm", type);
+			query.setParameter("nm", name);
+			query.executeUpdate();
+			tx.commit();
+			
+		} catch (PersistenceException e) {
+			e.printStackTrace();
+		}finally {
+			manager.close();
+		}
 
-	}
+		}
+
+	
 //18-08-22
 
 	@Override
 	public List<Cartoon> findAll() {
 		EntityManager manager = factory.createEntityManager();
 		try {
+			// EntityTransaction tx=manager.getTransaction();
 			Query query = manager.createNamedQuery("findAll");
 			List<Cartoon> result = query.getResultList();
 			if (result != null) {
@@ -282,7 +342,7 @@ public class CartoonDaoImpl implements CartoonDao {
 			}
 		} catch (PersistenceException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			manager.close();
 		}
 		return null;
